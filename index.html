@@ -11,7 +11,9 @@
 <meta property="og:image" content="assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Fredoka:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,500&amp;family=Inter+Tight:wght@500;700&amp;display=swap" rel="stylesheet">
+<script>document.documentElement.className+=" js"</script>
 <style>
+html{scroll-behavior:smooth}
 body{margin:0;background:#ffffff}
 a{color:inherit}
 a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
@@ -31,7 +33,13 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 .tile{position:relative;transition:transform .2s ease}
 .tile-link::after{content:"";position:absolute;inset:0;border-radius:24px}
 .tile:hover{transform:translateY(-3px)}
-@media (prefers-reduced-motion:reduce){.tile{transition:none}.tile:hover{transform:none}}
+@keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+section[aria-label="Introduction"]>*{animation:fadeup .8s cubic-bezier(.22,1,.36,1) both}
+section[aria-label="Introduction"]>:nth-child(2){animation-delay:.12s}
+section[aria-label="Introduction"]>:nth-child(3){animation-delay:.24s}
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tile{transition:none}.tile:hover{transform:none}section[aria-label="Introduction"]>*{animation:none}.js .reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -56,6 +64,7 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 <div style="position:relative;overflow:hidden">
 <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%)"><div class="hb hb1"></div><div class="hb hb2"></div><div class="hb hb3"></div></div>
 <section aria-label="Introduction" style="position:relative;max-width:1100px;margin:0 auto;padding:96px 20px 88px;text-align:center">
+<p style="margin:0 0 28px;font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:500;font-size:clamp(18px,2.4vw,24px);letter-spacing:.02em;color:#1d1d1f">Hi, I'm Prateek Vangari</p>
 <h1 style="margin:0 auto;max-width:980px;font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(40px,7vw,84px);line-height:1.05;letter-spacing:-0.02em;text-wrap:balance">I build small apps that take the mess off people's plates, <em>and I finish them.</em></h1>
 <p style="margin:28px auto 0;max-width:560px;font-size:21px;line-height:1.45;color:#6e6e73">Three are live. Below is what each one is and why I made it.</p>
 </section>
@@ -63,9 +72,9 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 
 <!-- Work: tiles -->
 <section id="work" aria-labelledby="work-h" style="max-width:1100px;margin:0 auto;padding:0 20px">
-<h2 id="work-h" style="margin:0;font-weight:600;font-size:clamp(32px,5vw,48px);line-height:1.1;letter-spacing:-0.02em">Projects</h2>
-<p style="margin:8px 0 32px;font-size:21px;line-height:1.4;color:#6e6e73">Now testing, refining, and learning what people actually need.</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px">
+<h2 id="work-h" class="reveal" style="margin:0;font-weight:600;font-size:clamp(32px,5vw,48px);line-height:1.1;letter-spacing:-0.02em">Projects</h2>
+<p class="reveal" style="margin:8px 0 32px;font-size:21px;line-height:1.4;color:#6e6e73">Now testing, refining, and learning what people actually need.</p>
+<div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px">
 
 <article class="tile ring-light" style="background:#232559;color:#f3ead8;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px">
 <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em"><span style="color:#f08a73">FAMILY</span><span>01</span></div>
@@ -96,12 +105,12 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 
 <!-- About -->
 <div style="background:#f5f5f7;margin-top:112px;padding:88px 0 112px">
-<section id="about" aria-labelledby="about-h" style="max-width:1100px;margin:0 auto;padding:0 20px">
+<section id="about" class="reveal" aria-labelledby="about-h" style="max-width:1100px;margin:0 auto;padding:0 20px">
 <div style="border-top:1px solid #d2d2d7;padding-top:40px;display:flex;flex-wrap:wrap;gap:40px 64px">
 
 <div class="tl-left" style="flex:1 1 280px;max-width:380px;display:flex;flex-direction:column;gap:16px">
 <h2 id="about-h" style="margin:0;font-weight:600;font-size:clamp(32px,4vw,40px);line-height:1.1;letter-spacing:-0.02em">About</h2>
-<p style="margin:0;font-size:19px;line-height:1.6">I'm Prateek, based in Newark, Delaware. For five years I ran Urban Rebox, a waste-tech company in Hyderabad, where I owned the product, the operations and the reporting, and grew it from no revenue to $200K a year across four products. I recently finished an MS in Business Analytics at the University of Delaware. Introly, Tellibo and Untangle are the apps I've built on my own.</p>
+<p style="margin:0;font-size:19px;line-height:1.6">I'm a founder and product builder. I spent five years building a waste-tech company in Hyderabad, and I'm now building apps of my own: Introly, Tellibo and Untangle. Based in Cincinnati, Ohio.</p>
 </div>
 
 <div style="flex:2 1 420px;min-width:0">
@@ -112,7 +121,7 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 <span aria-hidden="true" style="position:absolute;left:-10px;top:4px;width:14px;height:14px;border-radius:50%;background:#1d1d1f;border:2px solid #1d1d1f"></span>
 <p style="margin:0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6e6e73">Now</p>
 <h3 style="margin:6px 0 0;font-weight:600;font-size:22px;line-height:1.25;letter-spacing:-0.01em">Building Tellibo, Introly and Untangle</h3>
-<p style="margin:4px 0 0;color:#6e6e73">On my own</p>
+<p style="margin:4px 0 0;color:#6e6e73">Ideation to development</p>
 <p style="margin:12px 0 0;max-width:560px">Three apps, each built end to end and deployed.</p>
 <a href="#work" style="min-height:44px;display:inline-flex;align-items:center;gap:6px;color:#0066cc;font-weight:500;text-decoration:none">See the projects <span aria-hidden="true">›</span></a>
 </li>
@@ -129,7 +138,7 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 <p style="margin:0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6e6e73">Jan 2019 – Jul 2024</p>
 <h3 style="margin:6px 0 0;font-weight:600;font-size:22px;line-height:1.25;letter-spacing:-0.01em">Founder &amp; CEO</h3>
 <p style="margin:4px 0 0;color:#6e6e73">Urban Rebox, Hyderabad</p>
-<p style="margin:12px 0 0;max-width:560px">Started with no product and no revenue. Designed and shipped four digital tools and grew to $200K ARR across 10,000+ households and 212 partners.</p>
+<p style="margin:12px 0 0;max-width:560px">Built a waste-tech company from scratch, working toward sustainability and the digitization of waste management.</p>
 </li>
 
 <li style="position:relative;padding:0 0 48px 32px">
@@ -137,7 +146,7 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 <p style="margin:0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6e6e73">Apr 2018 – Sep 2019</p>
 <h3 style="margin:6px 0 0;font-weight:600;font-size:22px;line-height:1.25;letter-spacing:-0.01em">Strategy &amp; Growth Consultant</h3>
 <p style="margin:4px 0 0;color:#6e6e73">Teacherr (acquired by Infinity Learn)</p>
-<p style="margin:12px 0 0;max-width:560px">Doubled the teacher base from 2,000 to 4,000+ in six months by moving acquisition from individual outreach to school partnerships. Set up the company's first Power BI dashboards and shared KPI definitions.</p>
+<p style="margin:12px 0 0;max-width:560px">A platform for educators. Helped grow the user base 2x.</p>
 </li>
 
 <li style="position:relative;padding:0 0 48px 32px">
@@ -145,7 +154,7 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 <p style="margin:0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6e6e73">Oct 2017 – Mar 2018</p>
 <h3 style="margin:6px 0 0;font-weight:600;font-size:22px;line-height:1.25;letter-spacing:-0.01em">Transaction Risk Investigator</h3>
 <p style="margin:4px 0 0;color:#6e6e73">Amazon Development Centre</p>
-<p style="margin:12px 0 0;max-width:560px">Reviewed merchant account histories and transaction data, and documented recurring fraud patterns so the knowledge outlasted any single case.</p>
+<p style="margin:12px 0 0;max-width:560px">Responsible for stopping merchant fraud on the platform.</p>
 </li>
 
 <li style="position:relative;padding:0 0 8px 32px">
@@ -162,7 +171,7 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 </div>
 </section>
 
-<section id="achievements" aria-labelledby="ach-h" style="max-width:1100px;margin:88px auto 0;padding:0 20px">
+<section id="achievements" class="reveal" aria-labelledby="ach-h" style="max-width:1100px;margin:88px auto 0;padding:0 20px">
 <h2 id="ach-h" style="margin:0 0 20px;font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#6e6e73">Top achievements</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:16px">
 <div style="background:#ffffff;border:1px solid #d2d2d7;border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;gap:10px">
@@ -185,7 +194,7 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 </section>
 
 <!-- Contact -->
-<section id="contact" aria-labelledby="contact-h" style="max-width:1100px;margin:64px auto 0;padding:0 20px 112px">
+<section id="contact" class="reveal" aria-labelledby="contact-h" style="max-width:1100px;margin:64px auto 0;padding:0 20px 112px">
 <div style="border-top:1px solid #d2d2d7;padding-top:32px;display:flex;flex-wrap:wrap;gap:24px 56px">
 <div style="flex:1 1 220px;display:flex;flex-direction:column;gap:20px">
 <h2 id="contact-h" style="margin:0;font-weight:600;font-size:32px;line-height:1.1;letter-spacing:-0.02em">Contact</h2>
@@ -211,5 +220,13 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 </div>
 </footer>
 </div>
+<script>
+(function(){
+var els=document.querySelectorAll(".reveal");
+if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target)}})},{rootMargin:"0px 0px -8% 0px"});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
 </body>
 </html>
