@@ -35,6 +35,11 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 @media (prefers-reduced-motion:reduce){.hb{animation:none}}
 .fld:focus-visible,.fbtn:focus-visible{outline:3px solid #0071e3;outline-offset:3px}
 .fbtn:disabled{opacity:.6;cursor:default}
+.wash-tellibo{background-image:radial-gradient(120% 70% at 100% 0%,rgba(240,138,115,.32) 0,rgba(240,138,115,0) 60%),radial-gradient(90% 60% at 0% 100%,rgba(120,140,230,.28) 0,rgba(120,140,230,0) 65%)}
+.wash-introly{background-image:radial-gradient(120% 70% at 0% 0%,rgba(255,255,255,.22) 0,rgba(255,255,255,0) 60%),radial-gradient(90% 60% at 100% 100%,rgba(240,138,115,.30) 0,rgba(240,138,115,0) 65%)}
+.wash-untangle{background-image:radial-gradient(120% 70% at 100% 0%,rgba(240,170,150,.30) 0,rgba(240,170,150,0) 60%),radial-gradient(100% 70% at 0% 100%,rgba(120,200,210,.30) 0,rgba(120,200,210,0) 65%)}
+.grid-zone{position:relative;isolation:isolate}
+.grid-zone::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(20,20,43,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,43,.055) 1px,transparent 1px);background-size:32px 32px;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 55%,rgba(0,0,0,0) 100%);mask-image:linear-gradient(180deg,#000 0,#000 55%,rgba(0,0,0,0) 100%)}
 .tile{position:relative;transition:transform .2s ease}
 .tile-link::after{content:"";position:absolute;inset:0;border-radius:24px}
 .tile:hover{transform:translateY(-3px)}
@@ -56,7 +61,7 @@ section[aria-label="Introduction"]>:nth-child(3){animation-delay:.24s}
 </style>
 </head>
 <body>
-<div id="top" style="background:#ffffff;color:#1d1d1f;font-family:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden">
+<div id="top" style="color:#1d1d1f;font-family:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden">
 
 <!-- Top bar -->
 <header style="border-bottom:1px solid #d2d2d7;background:#fbfbfd">
@@ -73,6 +78,7 @@ section[aria-label="Introduction"]>:nth-child(3){animation-delay:.24s}
 
 <main>
 
+<div class="grid-zone">
 <!-- Hero -->
 <div style="position:relative;overflow:hidden">
 <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%)"><div class="hb hb1"></div><div class="hb hb2"></div><div class="hb hb3"></div></div>
@@ -89,7 +95,7 @@ section[aria-label="Introduction"]>:nth-child(3){animation-delay:.24s}
 <p class="reveal" style="margin:8px 0 32px;font-size:21px;line-height:1.4;color:#6e6e73">Introly and Untangle are open to try. Tellibo is preparing a small test launch.</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px">
 
-<article class="tile ring-light reveal" style="background:#232559;color:#f3ead8;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px">
+<article class="tile ring-light reveal wash-tellibo" style="background-color:#232559;color:#f3ead8;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px">
 <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em"><span style="color:#f08a73">FAMILY</span><span>01</span></div>
 <h3 style="margin:0;line-height:0"><img src="assets/tellibo-dark.svg" alt="Tellibo" style="display:block;height:84px;width:auto;max-width:100%;margin:-16px 0"></h3>
 <p style="margin:0;font-size:18px;line-height:1.4">A child's story and drawing, made into a one-minute animated film. No prompts or directing required.</p>
@@ -98,7 +104,7 @@ section[aria-label="Introduction"]>:nth-child(3){animation-delay:.24s}
 <div style="align-self:flex-start;display:flex;flex-wrap:wrap;gap:10px"><a class="tile-link" href="tellibo.html" style="min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 18px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid #f3ead8;color:#f3ead8">Know more <span aria-hidden="true">→</span></a><a href="https://tellibo-khaki.vercel.app" target="_blank" rel="noopener noreferrer" style="position:relative;z-index:1;min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 18px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;background:#f08a73;color:#232559;border:1.5px solid #f08a73">Join waitlist <span aria-hidden="true">↗</span></a></div>
 </article>
 
-<article class="tile ring-light reveal" style="background:#6c5ce7;color:#ffffff;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px">
+<article class="tile ring-light reveal wash-introly" style="background-color:#6c5ce7;color:#ffffff;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px">
 <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em"><span>WEBSITE</span><span>02</span></div>
 <h3 style="margin:0;line-height:0"><img src="assets/introly-light.png" alt="Introly" style="display:block;height:52px;width:auto;max-width:100%"></h3>
 <p style="margin:0;font-family:'Fredoka',system-ui,sans-serif;font-size:18px;line-height:1.4">A personal website that keeps itself up to date.</p>
@@ -107,7 +113,7 @@ section[aria-label="Introduction"]>:nth-child(3){animation-delay:.24s}
 <div style="align-self:flex-start;display:flex;flex-wrap:wrap;gap:10px"><a class="tile-link" href="introly.html" style="min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 18px;border-radius:999px;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid #ffffff;color:#ffffff">Know more <span aria-hidden="true">→</span></a><a href="https://introly-green.vercel.app" target="_blank" rel="noopener noreferrer" style="position:relative;z-index:1;min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 18px;border-radius:999px;font-family:'Fredoka',system-ui,sans-serif;font-weight:600;font-size:16px;text-decoration:none;background:#fbfaf7;color:#1b1d2e;border:1.5px solid #fbfaf7">Try now for free <span aria-hidden="true">↗</span></a></div>
 </article>
 
-<article class="tile reveal" style="background:#eef0f4;color:#14142b;border:1px solid #d5d8e0;border-radius:24px;padding:27px;display:flex;flex-direction:column;gap:16px">
+<article class="tile reveal wash-untangle" style="background-color:#eef0f4;color:#14142b;border:1px solid #d5d8e0;border-radius:24px;padding:27px;display:flex;flex-direction:column;gap:16px">
 <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em"><span>DAILY LIFE</span><span>03</span></div>
 <h3 style="margin:0;display:flex;align-items:center;gap:12px;font-family:'Inter Tight',system-ui,sans-serif;font-weight:700;font-size:48px;line-height:1;letter-spacing:-0.04em"><img src="assets/untangle-mark.png" alt="" style="display:block;height:.7em;width:auto">Untangle</h3>
 <p style="margin:0;font-size:18px;line-height:1.4">A messy list in. A realistic day out.</p>
@@ -118,6 +124,8 @@ section[aria-label="Introduction"]>:nth-child(3){animation-delay:.24s}
 
 </div>
 </section>
+
+</div>
 
 <!-- About -->
 <div style="background:#f5f5f7;margin-top:112px;padding:88px 0 112px">

@@ -11,11 +11,16 @@ a{color:inherit}
 a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 .ring-light a:focus-visible{outline-color:#ffffff}
 .ring-two:focus-visible{outline:3px solid #ffffff;outline-offset:0;box-shadow:0 0 0 6px #232559}
+.gridded{position:relative;isolation:isolate}
+.gridded::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background-image:linear-gradient(var(--g) 1px,transparent 1px),linear-gradient(90deg,var(--g) 1px,transparent 1px);background-size:32px 32px;-webkit-mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,0) 85%);mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,0) 85%);--g:rgba(255,255,255,.08)}
+.page-grid{position:absolute;top:0;left:0;right:0;height:760px;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(20,20,43,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,43,.055) 1px,transparent 1px);background-size:32px 32px;-webkit-mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,0) 100%);mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,0) 100%)}
+.wash-tellibo{background-image:radial-gradient(120% 70% at 100% 0%,rgba(240,138,115,.32) 0,rgba(240,138,115,0) 60%),radial-gradient(90% 40% at 0% 45%,rgba(120,140,230,.26) 0,rgba(120,140,230,0) 100%)}
 </style>
 </head>
 <body>
-<div id="top" style="background:#ffffff;color:#1d1d1f;font-family:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden">
+<div id="top" style="position:relative;isolation:isolate;background:#ffffff;color:#1d1d1f;font-family:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden">
 
+<div class="page-grid" aria-hidden="true"></div>
 <header style="border-bottom:1px solid #d2d2d7;background:#fbfbfd">
 <div style="max-width:1100px;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0 24px">
 <a href="index.html" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;font-weight:500;text-decoration:none;min-height:44px;display:inline-flex;align-items:center">Prateek Vangari</a>
@@ -28,7 +33,7 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 <div style="max-width:1100px;margin:0 auto;padding:40px 20px 0">
 <section aria-labelledby="app-h">
 
-<div class="ring-light" style="border-radius:32px 32px 0 0;background:#232559;color:#f3ead8;padding:clamp(24px,4vw,48px) clamp(20px,4vw,48px) 0">
+<div class="gridded wash-tellibo ring-light" style="border-radius:32px 32px 0 0;background-color:#232559;color:#f3ead8;padding:clamp(24px,4vw,48px) clamp(20px,4vw,48px) 0">
 <p style="margin:0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;color:#f08a73">01 · FAMILY</p>
 <h1 id="app-h" style="margin:0;line-height:0"><img src="assets/tellibo-dark.svg" alt="Tellibo" style="display:block;height:clamp(110px,18vw,200px);width:auto;max-width:100%;margin:-24px 0"></h1>
 <p style="margin:12px 0 0;max-width:640px;font-family:'Fraunces',Georgia,serif;font-size:clamp(20px,2.6vw,28px);line-height:1.3">A child's story and drawing, made into a one-minute animated film.</p>

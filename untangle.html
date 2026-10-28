@@ -10,11 +10,17 @@ body{margin:0;background:#ffffff}
 a{color:inherit}
 a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 .ring-two:focus-visible{outline:3px solid #ffffff;outline-offset:0;box-shadow:0 0 0 6px #14142b}
+.gridded{position:relative;isolation:isolate}
+.gridded::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background-image:linear-gradient(var(--g) 1px,transparent 1px),linear-gradient(90deg,var(--g) 1px,transparent 1px);background-size:32px 32px;-webkit-mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,0) 85%);mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,0) 85%);--g:rgba(255,255,255,.08)}
+.page-grid{position:absolute;top:0;left:0;right:0;height:760px;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(20,20,43,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,43,.055) 1px,transparent 1px);background-size:32px 32px;-webkit-mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,0) 100%);mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,0) 100%)}
+.wash-untangle{background-image:radial-gradient(120% 70% at 100% 0%,rgba(240,170,150,.30) 0,rgba(240,170,150,0) 60%),radial-gradient(100% 40% at 0% 45%,rgba(120,200,210,.30) 0,rgba(120,200,210,0) 100%)}
+.wash-untangle::before{--g:rgba(20,20,43,.06)}
 </style>
 </head>
 <body>
-<div id="top" style="background:#ffffff;color:#1d1d1f;font-family:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden">
+<div id="top" style="position:relative;isolation:isolate;background:#ffffff;color:#1d1d1f;font-family:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden">
 
+<div class="page-grid" aria-hidden="true"></div>
 <header style="border-bottom:1px solid #d2d2d7;background:#fbfbfd">
 <div style="max-width:1100px;margin:0 auto;padding:8px 20px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0 24px">
 <a href="index.html" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;font-weight:500;text-decoration:none;min-height:44px;display:inline-flex;align-items:center">Prateek Vangari</a>
@@ -27,7 +33,7 @@ a:focus-visible{outline:3px solid #0071e3;outline-offset:3px;border-radius:6px}
 <div style="max-width:1100px;margin:0 auto;padding:40px 20px 0">
 <section aria-labelledby="app-h">
 
-<div style="border-radius:32px 32px 0 0;background:#e3e6ee;color:#14142b;padding:clamp(24px,4vw,48px) clamp(20px,4vw,48px) 0">
+<div class="gridded wash-untangle" style="border-radius:32px 32px 0 0;background-color:#e3e6ee;color:#14142b;padding:clamp(24px,4vw,48px) clamp(20px,4vw,48px) 0">
 <p style="margin:0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;color:#4a4c5c">03 · DAILY LIFE</p>
 <h1 id="app-h" style="margin:12px 0 0;display:flex;align-items:center;gap:clamp(12px,2vw,24px);font-family:'Inter Tight',system-ui,sans-serif;font-weight:700;font-size:clamp(56px,10vw,120px);line-height:.95;letter-spacing:-0.04em"><img src="assets/untangle-mark.png" alt="" style="display:block;height:.7em;width:auto">Untangle</h1>
 <p style="margin:16px 0 0;max-width:640px;font-family:'Inter Tight',system-ui,sans-serif;font-weight:500;font-size:clamp(20px,2.6vw,28px);line-height:1.3;letter-spacing:-0.01em">A messy list in. A realistic day out.</p>
